@@ -28,6 +28,11 @@ revPath.revert(path, hash);
 ```
 
 
+## Related
+
+- [rev-file](https://github.com/sindresorhus/rev-file) - Get the revved file path of a file
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com)
