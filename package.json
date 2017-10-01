@@ -30,7 +30,7 @@
     "caching"
   ],
   "dependencies": {
-    "modify-filename": "^1.0.0"
+    "modify-filename": "^1.1.0"
   },
   "devDependencies": {
     "ava": "*"
