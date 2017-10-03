@@ -6,23 +6,23 @@
 ## Install
 
 ```
-$ npm install --save rev-path
+$ npm install rev-path
 ```
 
 
 ## Usage
 
 ```js
-var revPath = require('rev-path');
-var hash = 'bb9d8fe615'
+const revPath = require('rev-path');
+const hash = 'bb9d8fe615'
 
-var path = revPath('src/unicorn.png', hash);
+const path = revPath('src/unicorn.png', hash);
 //=> 'src/unicorn-bb9d8fe615.png'
 
 revPath('src/unicorn.png', Date.now());
 //=> 'src/unicorn-1432309925925.png'
 
-// you can also revert an already hashed path
+// You can also revert an already hashed path
 revPath.revert(path, hash);
 //=> 'src/unicorn.png'
 ```
@@ -35,4 +35,4 @@ revPath.revert(path, hash);
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

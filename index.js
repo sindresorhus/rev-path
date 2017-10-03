@@ -1,22 +1,18 @@
 'use strict';
-var modifyFilename = require('modify-filename');
+const modifyFilename = require('modify-filename');
 
-module.exports = function (pth, hash) {
-	if (arguments.length !== 2) {
+module.exports = (pth, hash) => {
+	if (!(pth && hash)) {
 		throw new Error('`path` and `hash` required');
 	}
 
-	return modifyFilename(pth, function (filename, ext) {
-		return filename + '-' + hash + ext;
-	});
+	return modifyFilename(pth, (filename, ext) => `${filename}-${hash}${ext}`);
 };
 
-module.exports.revert = function (pth, hash) {
-	if (arguments.length !== 2) {
+module.exports.revert = (pth, hash) => {
+	if (!(pth && hash)) {
 		throw new Error('`path` and `hash` required');
 	}
 
-	return modifyFilename(pth, function (filename, ext) {
-		return filename.replace(new RegExp('-' + hash + '$'), '') + ext;
-	});
+	return modifyFilename(pth, (filename, ext) => filename.replace(new RegExp(`-${hash}$`), '') + ext);
 };
