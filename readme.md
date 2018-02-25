@@ -26,7 +26,7 @@ revPath('src/unicorn.png', Date.now());
 revPath.revert(path, hash);
 //=> 'src/unicorn.png'
 
-// Yon can set custom separatingCharacter, default is '-'
+// Yon can set custom separating character, default is '-'
 const path2 = revPath('src/unicorn.png', hash, '.');
 //=> 'src/unicorn.bb9d8fe615.png'
 
