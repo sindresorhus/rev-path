@@ -8,4 +8,10 @@ test(t => {
 	t.is(hashed, 'src/unicorn-bb9d8fe615.png');
 	t.is(m('unicorn.png', hash), 'unicorn-bb9d8fe615.png');
 	t.is(m.revert(hashed, hash), pth);
+	t.is(m(pth, hash, '.'), 'src/unicorn.bb9d8fe615.png');
+	t.is(m.revert('src/unicorn.bb9d8fe615.png', hash, '.'), pth);
+	t.is(m(pth, hash, '_'), 'src/unicorn_bb9d8fe615.png');
+	t.is(m.revert('src/unicorn_bb9d8fe615.png', hash, '_'), pth);
+	t.is(m(pth, hash, '#'), 'src/unicorn#bb9d8fe615.png');
+	t.is(m.revert('src/unicorn#bb9d8fe615.png', hash, '#'), pth);
 });

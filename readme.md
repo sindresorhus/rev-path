@@ -25,6 +25,26 @@ revPath('src/unicorn.png', Date.now());
 // You can also revert an already hashed path
 revPath.revert(path, hash);
 //=> 'src/unicorn.png'
+
+// Yon can set custom separatingCharacter, default is '-'
+const path2 = revPath('src/unicorn.png', hash, '.');
+//=> 'src/unicorn.bb9d8fe615.png'
+
+const path3 = revPath('src/unicorn.png', hash, '_');
+//=> 'src/unicorn_bb9d8fe615.png'
+
+const path4 = revPath('src/unicorn.png', hash, '#');
+//=> 'src/unicorn#bb9d8fe615.png'
+
+// You can also revert an already hashed path
+revPath.revert(path2, hash, '.');
+//=> 'src/unicorn.png'
+
+revPath.revert(path3, hash, '_');
+//=> 'src/unicorn.png'
+
+revPath.revert(path4, hash, '#');
+//=> 'src/unicorn.png'
 ```
 
 
