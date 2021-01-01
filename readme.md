@@ -1,4 +1,4 @@
-# rev-path [![Build Status](https://travis-ci.org/sindresorhus/rev-path.svg?branch=master)](https://travis-ci.org/sindresorhus/rev-path)
+# rev-path
 
 > Create a [revved file path](http://blog.risingstack.com/automatic-cache-busting-for-your-css/)
 
