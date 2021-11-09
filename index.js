@@ -1,18 +1,17 @@
-'use strict';
-const modifyFilename = require('modify-filename');
+import modifyFilename from 'modify-filename';
 
-module.exports = (pth, hash) => {
-	if (!(pth && hash)) {
-		throw new Error('`path` and `hash` required');
+export function revPath(path, hash) {
+	if (!(path && hash)) {
+		throw new Error('`path` and `hash` are required');
 	}
 
-	return modifyFilename(pth, (filename, ext) => `${filename}-${hash}${ext}`);
-};
+	return modifyFilename(path, (filename, fileExtension) => `${filename}-${hash}${fileExtension}`);
+}
 
-module.exports.revert = (pth, hash) => {
-	if (!(pth && hash)) {
-		throw new Error('`path` and `hash` required');
+export function unrevPath(path, hash) {
+	if (!(path && hash)) {
+		throw new Error('`path` and `hash` are required');
 	}
 
-	return modifyFilename(pth, (filename, ext) => filename.replace(new RegExp(`-${hash}$`), '') + ext);
-};
+	return modifyFilename(path, (filename, fileExtension) => filename.replace(new RegExp(`-${hash}$`), '') + fileExtension);
+}

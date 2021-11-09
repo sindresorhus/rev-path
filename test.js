@@ -1,11 +1,11 @@
 import test from 'ava';
-import m from '.';
+import {revPath, unrevPath} from './index.js';
 
-test(t => {
+test('main', t => {
 	const hash = 'bb9d8fe615';
-	const pth = 'src/unicorn.png';
-	const hashed = m(pth, hash);
+	const path_ = 'src/unicorn.png';
+	const hashed = revPath(path_, hash);
 	t.is(hashed, 'src/unicorn-bb9d8fe615.png');
-	t.is(m('unicorn.png', hash), 'unicorn-bb9d8fe615.png');
-	t.is(m.revert(hashed, hash), pth);
+	t.is(revPath('unicorn.png', hash), 'unicorn-bb9d8fe615.png');
+	t.is(unrevPath(hashed, hash), path_);
 });

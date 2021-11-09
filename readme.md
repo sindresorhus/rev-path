@@ -2,18 +2,17 @@
 
 > Create a [revved file path](http://blog.risingstack.com/automatic-cache-busting-for-your-css/)
 
-
 ## Install
 
+```sh
+npm install rev-path
 ```
-$ npm install rev-path
-```
-
 
 ## Usage
 
 ```js
-const revPath = require('rev-path');
+import {revPath, unrevPath} from 'rev-path';
+
 const hash = 'bb9d8fe615'
 
 const path = revPath('src/unicorn.png', hash);
@@ -23,16 +22,10 @@ revPath('src/unicorn.png', Date.now());
 //=> 'src/unicorn-1432309925925.png'
 
 // You can also revert an already hashed path
-revPath.revert(path, hash);
+unrevPath(path, hash);
 //=> 'src/unicorn.png'
 ```
-
 
 ## Related
 
 - [rev-file](https://github.com/sindresorhus/rev-file) - Get the revved file path of a file
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
